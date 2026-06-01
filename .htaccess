@@ -2,6 +2,7 @@ DirectoryIndex index.php
 
 Options -MultiViews
 RewriteEngine On
+AddType video/mp4 .mp4 .m4v
 
 # Redirect visible .php page URLs to clean URLs for normal browser requests.
 RewriteCond %{REQUEST_METHOD} !POST

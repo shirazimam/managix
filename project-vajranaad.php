@@ -12,6 +12,7 @@ include __DIR__ . '/partials/header.php';
           <p>Vajranaad was built as an end-to-end public safety ecosystem using lightning warning APIs, GIS alert processing, the Doorbeen command portal, cloud infrastructure and Managix-engineered MIZNA IoT devices for automatic siren activation.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="contact">Build a Disaster Tech System</a>
+            <a class="button button-ghost" href="#project-videos">Watch Videos</a>
             <a class="button button-ghost" href="#project-gallery">View Gallery</a>
             <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
@@ -52,7 +53,7 @@ include __DIR__ . '/partials/header.php';
           <div>
             <p class="eyebrow">Operating Walkthrough</p>
             <h2>Command workflows, monitoring tools and alert operations were documented for field readiness.</h2>
-            <p>The Vajranaad pilot included operational walkthroughs for software navigation, monitoring dashboards, command workflows, alert review, device status checks and siren activation procedures. To keep the public website lightweight and safe for all visitors, the page now presents the project through verified images, architecture and written case-study content.</p>
+            <p>The Vajranaad pilot included operational walkthroughs for software navigation, monitoring dashboards, command workflows, alert review, device status checks and siren activation procedures. Videos are presented as click-to-play media cards so the page stays lightweight and no video file is requested until a visitor chooses to watch it.</p>
             <div class="feature-list">
               <span>Monitoring Tools</span>
               <span>Command Workflow</span>
@@ -61,6 +62,36 @@ include __DIR__ . '/partials/header.php';
               <span>Siren Activation</span>
               <span>Field Readiness</span>
             </div>
+          </div>
+        </div>
+
+        <div class="video-panel" id="project-videos">
+          <div>
+            <p class="eyebrow">Project Videos</p>
+            <h2>Software tutorial, training and siren testing from the Vajranaad pilot.</h2>
+            <p>These web-optimized videos showcase the operating walkthrough, monitoring tools, command workflow and hands-on field testing. Each video loads only after selection.</p>
+          </div>
+          <div class="video-grid">
+            <button class="video-card video-trigger" type="button" data-video-src="assets/projects/vajranaad/vajranaad-tutorial-web.m4v" data-video-title="Vajranaad software tutorial and operating walkthrough">
+              <img src="assets/projects/vajranaad/vajranaad-tutorial-thumbnail.png" alt="Vajranaad software tutorial thumbnail" />
+              <span>Software tutorial and operating walkthrough</span>
+            </button>
+            <button class="video-card video-trigger" type="button" data-video-src="assets/projects/vajranaad/vajranaad-training-web-1.m4v" data-video-title="Vajranaad training and system walkthrough">
+              <img src="assets/projects/vajranaad/siren-testing-1.jpg" alt="Vajranaad training and system walkthrough thumbnail" />
+              <span>Training and system walkthrough</span>
+            </button>
+            <button class="video-card video-trigger" type="button" data-video-src="assets/projects/vajranaad/vajranaad-training-web-2.m4v" data-video-title="Monitoring tools and command workflow review">
+              <img src="assets/projects/vajranaad/training-session-2.jpg" alt="Monitoring tools and command workflow review thumbnail" />
+              <span>Monitoring tools and command workflow review</span>
+            </button>
+            <button class="video-card video-trigger" type="button" data-video-src="assets/projects/vajranaad/vajranaad-training-web-3.m4v" data-video-title="Short pilot testing clip">
+              <img src="assets/projects/vajranaad/training-session-3.jpg" alt="Short pilot testing clip thumbnail" />
+              <span>Short pilot testing clip</span>
+            </button>
+            <button class="video-card video-trigger" type="button" data-video-src="assets/projects/vajranaad/vajranaad-training-web-4.m4v" data-video-title="Field readiness and stakeholder testing">
+              <img src="assets/projects/vajranaad/training-session-4.jpg" alt="Field readiness and stakeholder testing thumbnail" />
+              <span>Field readiness and stakeholder testing</span>
+            </button>
           </div>
         </div>
 

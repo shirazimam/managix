@@ -3,6 +3,7 @@
 # Large local media files
 *.mp4
 *.mov
+*.m4v
 *.webm
 *.avi
 *.mkv
@@ -10,4 +11,5 @@
 # Project video assets served locally through XAMPP
 assets/projects/**/*.mp4
 assets/projects/**/*.mov
+assets/projects/**/*.m4v
 assets/projects/**/*.webm

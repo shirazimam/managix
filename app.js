@@ -220,3 +220,56 @@ document.querySelectorAll('[data-slider]').forEach((slider) => {
   updateStatus();
   startAutoplay();
 });
+
+const videoTriggers = document.querySelectorAll('[data-video-src]');
+
+if (videoTriggers.length > 0) {
+  const modal = document.createElement('div');
+  modal.className = 'video-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML = `
+    <div class="video-modal-dialog">
+      <div class="video-modal-head">
+        <h3 data-video-title></h3>
+        <button class="video-modal-close" type="button" aria-label="Close video">&times;</button>
+      </div>
+      <video controls playsinline preload="metadata"></video>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const modalTitle = modal.querySelector('[data-video-title]');
+  const modalVideo = modal.querySelector('video');
+  const closeButton = modal.querySelector('.video-modal-close');
+
+  const closeVideo = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    modalVideo.pause();
+    modalVideo.removeAttribute('src');
+    modalVideo.load();
+  };
+
+  videoTriggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      modalTitle.textContent = trigger.dataset.videoTitle || 'Vajranaad project video';
+      modalVideo.src = trigger.dataset.videoSrc;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      modalVideo.load();
+      modalVideo.play().catch(() => {});
+    });
+  });
+
+  closeButton.addEventListener('click', closeVideo);
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeVideo();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeVideo();
+    }
+  });
+}
