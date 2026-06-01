@@ -12,7 +12,6 @@ include __DIR__ . '/partials/header.php';
           <p>Vajranaad was built as an end-to-end public safety ecosystem using lightning warning APIs, GIS alert processing, the Doorbeen command portal, cloud infrastructure and Managix-engineered MIZNA IoT devices for automatic siren activation.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="contact">Build a Disaster Tech System</a>
-            <a class="button button-ghost" href="#tutorial-video">Watch Main Video</a>
             <a class="button button-ghost" href="#project-gallery">View Gallery</a>
             <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
@@ -49,16 +48,20 @@ include __DIR__ . '/partials/header.php';
           </figure>
         </div>
 
-        <div class="video-panel tutorial-video" id="tutorial-video">
+        <div class="feature-panel">
           <div>
-            <p class="eyebrow">Main Project Video</p>
-            <h2>Complete Vajranaad software tutorial and operating walkthrough.</h2>
-            <p>This is the primary Vajranaad tutorial video, showing the monitoring tools, software navigation, command workflows and operating process used for the lightning early warning pilot.</p>
+            <p class="eyebrow">Operating Walkthrough</p>
+            <h2>Command workflows, monitoring tools and alert operations were documented for field readiness.</h2>
+            <p>The Vajranaad pilot included operational walkthroughs for software navigation, monitoring dashboards, command workflows, alert review, device status checks and siren activation procedures. To keep the public website lightweight and safe for all visitors, the page now presents the project through verified images, architecture and written case-study content.</p>
+            <div class="feature-list">
+              <span>Monitoring Tools</span>
+              <span>Command Workflow</span>
+              <span>Alert Review</span>
+              <span>Device Status</span>
+              <span>Siren Activation</span>
+              <span>Field Readiness</span>
+            </div>
           </div>
-          <video controls preload="none" poster="assets/projects/vajranaad/vajranaad-tutorial-thumbnail.png">
-            <source src="assets/projects/vajranaad/vajranaad-tutorial.mp4" type="video/mp4" />
-            Your browser does not support embedded video.
-          </video>
         </div>
 
         <div class="media-slider" id="project-gallery" data-slider>
@@ -115,44 +118,6 @@ include __DIR__ . '/partials/header.php';
               </figure>
             </div>
             <button class="slider-button slider-button-next" type="button" data-slider-next aria-label="Next gallery image">&#8250;</button>
-          </div>
-        </div>
-
-        <div class="video-panel">
-          <div>
-            <p class="eyebrow">Project Videos</p>
-            <h2>Training and testing clips from the Vajranaad pilot.</h2>
-            <p>These additional clips show the system being demonstrated, tested and discussed with stakeholders during the lightning early warning pilot, including monitoring tools, alert operations and command-room workflows.</p>
-          </div>
-          <div class="video-grid">
-            <figure class="video-card">
-              <video controls preload="metadata" poster="assets/projects/vajranaad/siren-testing-1.jpg">
-                <source src="assets/projects/vajranaad/training-testing-1.mp4" type="video/mp4" />
-                Your browser does not support embedded video.
-              </video>
-              <figcaption>Training and system walkthrough.</figcaption>
-            </figure>
-            <figure class="video-card">
-              <video controls preload="metadata" poster="assets/projects/vajranaad/training-session-2.jpg">
-                <source src="assets/projects/vajranaad/training-testing-2.mp4" type="video/mp4" />
-                Your browser does not support embedded video.
-              </video>
-              <figcaption>Monitoring tools and command workflow review.</figcaption>
-            </figure>
-            <figure class="video-card">
-              <video controls preload="metadata" poster="assets/projects/vajranaad/training-session-3.jpg">
-                <source src="assets/projects/vajranaad/training-testing-3.mp4" type="video/mp4" />
-                Your browser does not support embedded video.
-              </video>
-              <figcaption>Short pilot testing clip.</figcaption>
-            </figure>
-            <figure class="video-card">
-              <video controls preload="metadata" poster="assets/projects/vajranaad/training-session-4.jpg">
-                <source src="assets/projects/vajranaad/training-testing-4.mp4" type="video/mp4" />
-                Your browser does not support embedded video.
-              </video>
-              <figcaption>Field readiness and stakeholder testing.</figcaption>
-            </figure>
           </div>
         </div>
 
