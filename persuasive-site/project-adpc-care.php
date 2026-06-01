@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Climate adaptation knowledge management for stronger resilience programs.</h1>
           <p>Managix supported a digital knowledge and resource platform focused on climate adaptation, learning access and structured information delivery for development-sector users.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build a Knowledge Platform</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build a Knowledge Platform</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

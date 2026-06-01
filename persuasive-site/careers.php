@@ -12,7 +12,7 @@ include __DIR__ . '/partials/header.php';
           <p>At Managix Technology, you work on serious systems: GIS, maps data, cloud platforms, mobile products, dashboards, ERP, public-sector technology and digital growth engines used beyond the presentation room.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://in.indeed.com/cmp/Managix-Technology-1" target="_blank" rel="noopener">Apply Now</a>
-            <a class="button button-ghost" href="portfolio.php">See Our Work</a>
+            <a class="button button-ghost" href="portfolio">See Our Work</a>
           </div>
         </div>
       </section>
@@ -53,7 +53,7 @@ include __DIR__ . '/partials/header.php';
         <p>Explore current openings and apply through our official Indeed company page. We review applications for people who can bring skill, energy and ownership to the team.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="https://in.indeed.com/cmp/Managix-Technology-1" target="_blank" rel="noopener">Apply Now</a>
-          <a class="button button-ghost" href="contact.php">Contact Managix</a>
+          <a class="button button-ghost" href="contact">Contact Managix</a>
         </div>
       </section>
     </main>

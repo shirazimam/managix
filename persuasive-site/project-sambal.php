@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>A knowledge portal for disaster risk reduction.</h1>
           <p>SAMBAL was created to organize, publish and share disaster risk reduction resources through a structured public-sector knowledge platform.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build a Knowledge Portal</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build a Knowledge Portal</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Custom business platforms built around real workflows.</h1>
           <p>Managix builds enterprise applications, CRM systems, ERP workflows, vendor portals, dashboards, APIs and mobile apps designed around operational needs.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build an Enterprise Platform</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build an Enterprise Platform</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

@@ -16,9 +16,9 @@ include __DIR__ . '/partials/header.php';
               discipline and measurable business impact.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="contact.php">Build With Us</a>
-              <a class="button button-ghost" href="calculator.php">Estimate Project Cost</a>
-              <a class="button button-ghost" href="portfolio.php">See Proof</a>
+              <a class="button button-primary" href="contact">Build With Us</a>
+              <a class="button button-ghost" href="calculator">Estimate Project Cost</a>
+              <a class="button button-ghost" href="portfolio">See Proof</a>
             </div>
           </div>
           <div class="signal-panel" data-reveal>
@@ -76,7 +76,7 @@ include __DIR__ . '/partials/header.php';
           <p>Our portfolio includes platforms where accuracy, speed and field visibility matter.</p>
         </div>
         <div class="project-grid">
-          <a class="project-card featured" href="project-tech-mahindra-maps.php" aria-label="View Tech Mahindra Google Maps and Apple Maps case study">
+          <a class="project-card featured" href="project-tech-mahindra-maps" aria-label="View Tech Mahindra Google Maps and Apple Maps case study">
             <p class="eyebrow">Tech Mahindra project</p>
             <h3>Google Maps and Apple Maps data project</h3>
             <p>
@@ -86,9 +86,9 @@ include __DIR__ . '/partials/header.php';
             </p>
             <div class="tag-list"><span>GIS</span><span>Maps Data</span><span>Location Intelligence</span><span>Tech Mahindra</span></div>
           </a>
-          <a class="project-card" href="project-adpc-care.php" aria-label="View ADPC CARE Program case study"><h3>ADPC CARE Program</h3><p>Climate adaptation and knowledge management solution for learning resources and resilience-focused programs.</p></a>
-          <a class="project-card" href="project-krishi-samriddhi-school.php" aria-label="View Krishi Samriddhi School case study"><h3>Krishi Samriddhi School</h3><p>Digital agriculture education platform for learning, outreach and community engagement.</p></a>
-          <a class="project-card" href="project-vajranaad.php" aria-label="View Vajranaad case study"><h3>Vajranaad</h3><p>Lightning early warning alert system using satellite feeds, IoT devices, cloud servers and automated alarms.</p></a>
+          <a class="project-card" href="project-adpc-care" aria-label="View ADPC CARE Program case study"><h3>ADPC CARE Program</h3><p>Climate adaptation and knowledge management solution for learning resources and resilience-focused programs.</p></a>
+          <a class="project-card" href="project-krishi-samriddhi-school" aria-label="View Krishi Samriddhi School case study"><h3>Krishi Samriddhi School</h3><p>Digital agriculture education platform for learning, outreach and community engagement.</p></a>
+          <a class="project-card" href="project-vajranaad" aria-label="View Vajranaad case study"><h3>Vajranaad</h3><p>Lightning early warning alert system using satellite feeds, IoT devices, cloud servers and automated alarms.</p></a>
         </div>
       </section>
 
@@ -137,10 +137,10 @@ include __DIR__ . '/partials/header.php';
         <h2>Bring us the problem. We will bring the technology, process and momentum.</h2>
         <p>Whether you need enterprise software, GIS data execution, cloud migration, a mobile product or a digital growth engine, Managix is built to move serious work forward.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="contact.php">Talk to Managix</a>
-          <a class="button button-ghost" href="calculator.php">Calculate Investment</a>
-          <a class="button button-ghost" href="careers.php">Join the Team</a>
-          <a class="button button-ghost" href="services.php">Explore Services</a>
+          <a class="button button-primary" href="contact">Talk to Managix</a>
+          <a class="button button-ghost" href="calculator">Calculate Investment</a>
+          <a class="button button-ghost" href="careers">Join the Team</a>
+          <a class="button button-ghost" href="services">Explore Services</a>
         </div>
       </section>
     </main>

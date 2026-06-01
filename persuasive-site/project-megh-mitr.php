@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Weather intelligence and advisory support for farmers.</h1>
           <p>Megh Mitr was designed to help farmers access weather information and crop advisories through a practical mobile experience.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build an Agriculture App</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build an Agriculture App</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

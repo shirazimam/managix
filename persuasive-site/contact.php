@@ -25,17 +25,13 @@ include __DIR__ . '/partials/header.php';
           <p>We work with leadership teams, departments, enterprises and product owners who need technology that can carry real responsibility.</p>
           <div class="contact-details">
             <a href="mailto:info@managixglobal.com">info@managixglobal.com</a>
-            <a href="mailto:hello@managixglobal.com">hello@managixglobal.com</a>
-            <a href="tel:+919160628999">+91 91606 28999</a>
-            <a href="tel:+917799488861">+91 77994 88861</a>
             <span>9th Floor, Sattva Magnus Commercial Block, Hyderabad - 500008</span>
             <span>602, Ashiana Chambers, Exhibition Road, Patna - 800001</span>
           </div>
         </div>
-        <form class="contact-form" action="contact-submit.php" method="post">
+        <form class="contact-form" action="contact-submit" method="post">
           <label>Name<input name="name" autocomplete="name" required /></label>
           <label>Work email<input type="email" name="email" autocomplete="email" required /></label>
-          <label>Phone<input name="phone" autocomplete="tel" /></label>
           <label class="form-hidden">Company website<input name="website" tabindex="-1" autocomplete="off" /></label>
           <label>
             Priority

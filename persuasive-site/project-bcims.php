@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Bihar COVID Information Management System for statewide traveler and quarantine monitoring.</h1>
           <p>Managix developed BCIMS for the Disaster Management Department, Government of Bihar, to support one of the largest pandemic response operations in the state: traveler registration, quarantine monitoring, field verification, complaint management, geotagged reports and real-time decision dashboards.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build a GovTech Platform</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build a GovTech Platform</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>
@@ -125,7 +125,7 @@ include __DIR__ . '/partials/header.php';
           <p>BCIMS helped the Government of Bihar digitally monitor returning travelers, strengthen quarantine compliance, coordinate field teams, generate district and state reports, respond to public requests and make data-driven decisions during an urgent public-health crisis.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="assets/projects/bcims/garuda-app-and-bcims.pdf" download>Download Garuda and BCIMS Deck</a>
-            <a class="button button-ghost" href="contact.php">Discuss a Similar Platform</a>
+            <a class="button button-ghost" href="contact">Discuss a Similar Platform</a>
           </div>
         </div>
       </section>

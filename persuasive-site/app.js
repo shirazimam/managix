@@ -20,6 +20,38 @@ if ('IntersectionObserver' in window) {
 
 document.documentElement.classList.add('js-ready');
 
+const portfolioDropdown = document.querySelector('.nav-dropdown');
+const portfolioToggle = portfolioDropdown?.children?.[0];
+const navCheck = document.querySelector('#nav-check');
+const compactNavQuery = window.matchMedia('(max-width: 980px)');
+
+const setPortfolioMenuOpen = (isOpen) => {
+  if (!portfolioDropdown || !portfolioToggle) return;
+  portfolioDropdown.classList.toggle('is-open', isOpen);
+  portfolioToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+};
+
+setPortfolioMenuOpen(portfolioDropdown?.classList.contains('is-open') || false);
+
+portfolioToggle?.addEventListener('click', (event) => {
+  if (!compactNavQuery.matches) return;
+
+  event.preventDefault();
+  setPortfolioMenuOpen(!portfolioDropdown.classList.contains('is-open'));
+});
+
+navCheck?.addEventListener('change', (event) => {
+  if (!event.target.checked && compactNavQuery.matches) {
+    setPortfolioMenuOpen(false);
+  }
+});
+
+compactNavQuery.addEventListener?.('change', (event) => {
+  if (!event.matches) {
+    setPortfolioMenuOpen(false);
+  }
+});
+
 const calculatorRows = document.querySelector('#calculatorRows');
 const addRowButton = document.querySelector('#addRow');
 const currencySelect = document.querySelector('#currencySelect');

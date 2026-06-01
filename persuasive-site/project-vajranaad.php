@@ -11,10 +11,10 @@ include __DIR__ . '/partials/header.php';
           <h1>IoT-powered lightning early warning system for faster public alerts.</h1>
           <p>Vajranaad was built as an end-to-end public safety ecosystem using lightning warning APIs, GIS alert processing, the Doorbeen command portal, cloud infrastructure and Managix-engineered MIZNA IoT devices for automatic siren activation.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build a Disaster Tech System</a>
+            <a class="button button-primary" href="contact">Build a Disaster Tech System</a>
             <a class="button button-ghost" href="#tutorial-video">Watch Main Video</a>
             <a class="button button-ghost" href="#project-gallery">View Gallery</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

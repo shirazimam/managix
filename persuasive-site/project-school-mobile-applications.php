@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Student and parent communication solutions for education institutions.</h1>
           <p>Managix has delivered school-focused digital solutions that improve communication, engagement and operational visibility for institutions, students and parents.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build an Education App</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build an Education App</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

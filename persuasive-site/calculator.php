@@ -12,7 +12,7 @@ include __DIR__ . '/partials/header.php';
           <p>Select resources, adjust monthly cost, enter duration and instantly estimate the total project investment in INR or USD.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#calculator">Start Calculating</a>
-            <a class="button button-ghost" href="contact.php">Discuss With Managix</a>
+            <a class="button button-ghost" href="contact">Discuss With Managix</a>
           </div>
         </div>
       </section>
@@ -81,8 +81,8 @@ include __DIR__ . '/partials/header.php';
         <h2>The calculator gives a fast estimate. Managix can turn it into a delivery plan.</h2>
         <p>Share your estimated team mix with us and we can refine the scope, timeline, milestones and engagement model.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="contact.php">Request Proposal</a>
-          <a class="button button-ghost" href="services.php">Review Services</a>
+          <a class="button button-primary" href="contact">Request Proposal</a>
+          <a class="button button-ghost" href="services">Review Services</a>
         </div>
       </section>
     </main>

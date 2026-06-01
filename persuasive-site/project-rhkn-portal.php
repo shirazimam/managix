@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Knowledge platform for rural housing initiatives.</h1>
           <p>RHKN Portal was developed to support structured knowledge sharing, resource access and information management around rural housing programs.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build a Portal</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build a Portal</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

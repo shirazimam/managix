@@ -108,7 +108,7 @@ $sent = false;
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: contact.php');
+    header('Location: contact');
     exit;
 }
 
@@ -118,7 +118,6 @@ if ($honeypot !== '') {
 } else {
     $name = clean_text($_POST['name'] ?? '', 140);
     $email = clean_text($_POST['email'] ?? '', 180);
-    $phone = clean_text($_POST['phone'] ?? '', 80);
     $service = clean_text($_POST['service'] ?? '', 180);
     $message = clean_text($_POST['message'] ?? '', 3000);
     $captcha = clean_text($_POST['captcha'] ?? '', 20);
@@ -134,7 +133,6 @@ if ($honeypot !== '') {
         $body = "New project enquiry from the Managix website\n\n"
             . "Name: {$name}\n"
             . "Email: {$email}\n"
-            . "Phone: " . ($phone !== '' ? $phone : 'Not provided') . "\n"
             . "Priority: {$service}\n\n"
             . "Message:\n{$message}\n\n"
             . "Submitted from: " . ($_SERVER['HTTP_HOST'] ?? 'Managix website') . "\n"
@@ -144,7 +142,7 @@ if ($honeypot !== '') {
             smtp_send_mail('info@managixglobal.com', $subject, $body, $email);
             $sent = true;
         } catch (Throwable $exception) {
-            $error = 'The message could not be sent right now. Please email info@managixglobal.com or call +91 91606 28999.';
+            $error = 'The message could not be sent right now. Please email info@managixglobal.com.';
             error_log('Managix contact form SMTP error: ' . $exception->getMessage());
         }
     }
@@ -159,8 +157,8 @@ include __DIR__ . '/partials/header.php';
           <h1><?= $sent ? 'Thank you. Your enquiry has been sent.' : 'We could not send your enquiry.' ?></h1>
           <p><?= $sent ? 'Our team will review your message and get back to you shortly.' : htmlspecialchars($error, ENT_QUOTES) ?></p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Back to Contact</a>
-            <a class="button button-ghost" href="calculator.php">Estimate Project Cost</a>
+            <a class="button button-primary" href="contact">Back to Contact</a>
+            <a class="button button-ghost" href="calculator">Estimate Project Cost</a>
           </div>
         </div>
       </section>

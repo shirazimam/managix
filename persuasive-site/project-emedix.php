@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Online pharmacy ecosystem with inventory, billing and delivery workflows.</h1>
           <p>EMEDIX connected customer-facing digital commerce with operational pharmacy workflows, giving the business a stronger technology backbone.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build a Commerce Platform</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build a Commerce Platform</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

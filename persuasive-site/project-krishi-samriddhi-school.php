@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Digital learning platform for agriculture communities.</h1>
           <p>Krishi Samriddhi School was designed to make agriculture education, advisory content and learning engagement more accessible for farming communities.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Build an Education Platform</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Build an Education Platform</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>

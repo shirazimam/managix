@@ -51,8 +51,8 @@ include __DIR__ . '/partials/header.php';
         <h2>Estimate the team cost before you start the conversation.</h2>
         <p>Use the calculator to create a quick resource plan in INR or USD, then share it with us for a refined delivery proposal.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="calculator.php">Open Cost Calculator</a>
-          <a class="button button-ghost" href="contact.php">Request Proposal</a>
+          <a class="button button-primary" href="calculator">Open Cost Calculator</a>
+          <a class="button button-ghost" href="contact">Request Proposal</a>
         </div>
       </section>
     </main>

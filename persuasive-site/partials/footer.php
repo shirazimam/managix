@@ -5,15 +5,15 @@
         <small>Enterprise software, GIS, cloud, ERP, mobile, quality and digital growth solutions.</small>
       </div>
       <nav aria-label="Footer navigation">
-        <a href="about.php">About</a>
-        <a href="services.php">Services</a>
-        <a href="industries.php">Industries</a>
-        <a href="portfolio.php">Portfolio</a>
-        <a href="careers.php">Careers</a>
-        <a href="calculator.php">Cost Calculator</a>
-        <a href="contact.php">Contact</a>
+        <a href="about">About</a>
+        <a href="services">Services</a>
+        <a href="industries">Industries</a>
+        <a href="portfolio">Portfolio</a>
+        <a href="careers">Careers</a>
+        <a href="calculator">Cost Calculator</a>
+        <a href="contact">Contact</a>
       </nav>
     </footer>
-    <script src="app.js?v=20260601-gallery-autoplay"></script>
+    <script src="app.js?v=20260601-menu-fix"></script>
   </body>
 </html>

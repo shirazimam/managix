@@ -80,7 +80,7 @@ img {
 
 .nav-submenu {
   position: absolute;
-  top: calc(100% + 16px);
+  top: 100%;
   left: 50%;
   z-index: 60;
   display: grid;
@@ -94,7 +94,7 @@ img {
   box-shadow: var(--shadow);
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, 8px);
+  transform: translate(-50%, 4px);
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
@@ -1209,7 +1209,9 @@ html:not(.js-ready) [data-reveal] {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    overflow: hidden;
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: var(--white);
@@ -1405,6 +1407,63 @@ html:not(.js-ready) [data-reveal] {
   }
 }
 
+/* Navigation dropdown reliability fixes */
+.nav-dropdown {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+}
+
+.nav-dropdown::after {
+  position: absolute;
+  top: 100%;
+  right: -16px;
+  left: -16px;
+  height: 18px;
+  content: "";
+}
+
+.nav-submenu {
+  margin-top: 0;
+}
+
+@media (max-width: 980px) {
+  .nav-dropdown {
+    display: grid;
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  .nav-dropdown::after {
+    display: none;
+  }
+
+  .nav-submenu {
+    position: static;
+    display: none;
+    min-width: 0;
+    max-height: none;
+    overflow: visible;
+    padding: 0 0 8px;
+    border: 0;
+    border-radius: 0;
+    background: #f7f9fc;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+  }
+
+  .nav-dropdown.is-open .nav-submenu {
+    display: grid;
+  }
+
+  .nav-submenu a {
+    white-space: normal;
+  }
+}
+
 /* Formal corporate presentation pass */
 :root {
   --ink: #0b1728;
@@ -1545,6 +1604,10 @@ h3 {
 
 .section {
   padding: 72px 0;
+}
+
+.section.tech-band {
+  padding: 72px clamp(40px, 5vw, 64px);
 }
 
 .section-heading {
@@ -1691,5 +1754,9 @@ label,
 
   .section {
     padding: 54px 0;
+  }
+
+  .section.tech-band {
+    padding: 54px 24px;
   }
 }

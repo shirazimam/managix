@@ -11,8 +11,8 @@ include __DIR__ . '/partials/header.php';
           <h1>Google Maps and Apple Maps data execution support.</h1>
           <p>Managix supported mapping and location-data work for Tech Mahindra, helping execute POI collection, GIS, field workforce management, data collection and quality workflows for global maps project requirements.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="contact.php">Discuss a Similar Project</a>
-            <a class="button button-ghost" href="portfolio.php">Back to Portfolio</a>
+            <a class="button button-primary" href="contact">Discuss a Similar Project</a>
+            <a class="button button-ghost" href="portfolio">Back to Portfolio</a>
           </div>
         </div>
       </section>
