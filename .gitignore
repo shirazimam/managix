@@ -8,6 +8,6 @@
 *.mkv
 
 # Project video assets served locally through XAMPP
-persuasive-site/assets/projects/**/*.mp4
-persuasive-site/assets/projects/**/*.mov
-persuasive-site/assets/projects/**/*.webm
+assets/projects/**/*.mp4
+assets/projects/**/*.mov
+assets/projects/**/*.webm
