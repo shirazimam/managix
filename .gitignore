@@ -1,0 +1,13 @@
+.DS_Store
+
+# Large local media files
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+
+# Project video assets served locally through XAMPP
+persuasive-site/assets/projects/**/*.mp4
+persuasive-site/assets/projects/**/*.mov
+persuasive-site/assets/projects/**/*.webm
