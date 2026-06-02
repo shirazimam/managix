@@ -1,6 +1,6 @@
 <?php
-$pageTitle = 'Managix Global | Real Estate, Technology and Education';
-$pageDescription = 'Choose Managix Real Estate, Managix Technology or Managix Education.';
+$pageTitle = 'Managix Global | Real Estate, Technology, Digital Marketing and Education';
+$pageDescription = 'Choose Managix Real Estate, Managix Technology, Managix Digital Marketing or Managix Education.';
 ?>
 <!doctype html>
 <html lang="en">
@@ -140,7 +140,7 @@ $pageDescription = 'Choose Managix Real Estate, Managix Technology or Managix Ed
 
       .choice-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 24px;
         margin-top: 28px;
         perspective: 1200px;
@@ -286,6 +286,12 @@ $pageDescription = 'Choose Managix Real Estate, Managix Technology or Managix Ed
       .choice-card.education {
         --accent: var(--green);
         --accent-soft: rgba(70, 211, 154, 0.18);
+        animation-delay: -6.1s;
+      }
+
+      .choice-card.marketing {
+        --accent: var(--cyan);
+        --accent-soft: rgba(25, 211, 255, 0.18);
         animation-delay: -5.2s;
       }
 
@@ -368,6 +374,24 @@ $pageDescription = 'Choose Managix Real Estate, Managix Technology or Managix Ed
         }
       }
 
+      @media (max-width: 1100px) {
+        .hero {
+          padding: 46px 0 26px;
+        }
+
+        .choice-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .choice-card {
+          min-height: 250px;
+        }
+
+        .choice-card span {
+          margin-bottom: 48px;
+        }
+      }
+
       @media (max-width: 920px) {
         .landing {
           width: min(100% - 32px, 1180px);
@@ -402,7 +426,7 @@ $pageDescription = 'Choose Managix Real Estate, Managix Technology or Managix Ed
       <section class="hero">
         <p class="eyebrow">Managix Global</p>
         <h1>Choose the Managix vertical built for your next <em>serious move.</em></h1>
-        <p>Managix Global brings together focused businesses in real estate, enterprise technology and education. Select a division to enter the right experience.</p>
+        <p>Managix Global brings together focused businesses in real estate, enterprise technology, digital marketing and education. Select a division to enter the right experience.</p>
       </section>
 
       <section class="choice-grid" aria-label="Managix divisions">
@@ -420,8 +444,15 @@ $pageDescription = 'Choose Managix Real Estate, Managix Technology or Managix Ed
           <strong>Visit Technology</strong>
         </a>
 
-        <a class="choice-card education" href="education">
+        <a class="choice-card marketing" href="digitalmarketing">
           <span>03</span>
+          <h2>Digital Marketing</h2>
+          <p>Performance campaigns, SEO, content, social media and growth-focused digital visibility.</p>
+          <strong>Visit Digital Marketing</strong>
+        </a>
+
+        <a class="choice-card education" href="education">
+          <span>04</span>
           <h2>Education</h2>
           <p>Learning, skilling and education initiatives from Managix.</p>
           <strong>Visit Education</strong>

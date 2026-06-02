@@ -17,6 +17,7 @@ include __DIR__ . '/partials/header.php';
             </p>
             <div class="hero-actions">
               <a class="button button-primary" href="contact">Build With Us</a>
+              <a class="button button-ghost" href="../digitalmarketing">Digital Marketing</a>
               <a class="button button-ghost" href="calculator">Estimate Project Cost</a>
               <a class="button button-ghost" href="portfolio">See Proof</a>
             </div>
@@ -138,6 +139,7 @@ include __DIR__ . '/partials/header.php';
         <p>Whether you need enterprise software, GIS data execution, cloud migration, a mobile product or a digital growth engine, Managix is built to move serious work forward.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="contact">Talk to Managix</a>
+          <a class="button button-ghost" href="../digitalmarketing">Explore Digital Marketing</a>
           <a class="button button-ghost" href="calculator">Calculate Investment</a>
           <a class="button button-ghost" href="careers">Join the Team</a>
           <a class="button button-ghost" href="services">Explore Services</a>

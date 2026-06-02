@@ -44,6 +44,7 @@ $activePage = $activePage ?? '';
           </div>
         </div>
         <a class="<?= $activePage === 'insights' ? 'active' : '' ?>" href="insights">Insights</a>
+        <a href="../digitalmarketing">Digital Marketing</a>
         <a class="<?= $activePage === 'careers' ? 'active' : '' ?>" href="careers">Careers</a>
         <a class="<?= $activePage === 'calculator' ? 'active' : '' ?>" href="calculator">Cost Calculator</a>
         <a class="<?= $activePage === 'contact' ? 'active' : '' ?>" href="contact">Contact</a>
