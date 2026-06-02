@@ -1,147 +1,218 @@
 <?php
-$pageTitle = 'Managix Technology | Enterprise Digital Transformation Partner';
-$pageDescription = 'Managix Technology builds high-trust software, GIS, cloud, ERP, mobile and digital transformation systems for government, enterprise and growth-focused organizations.';
-$activePage = 'home';
-include __DIR__ . '/partials/header.php';
+$pageTitle = 'Managix Global | Real Estate, Technology and Education';
+$pageDescription = 'Choose Managix Real Estate, Managix Technology or Managix Education.';
 ?>
-    <main>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>" />
+    <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
+    <link rel="icon" type="image/png" href="technology/assets/brand/fav.png?v=20260602" />
+    <link rel="apple-touch-icon" href="technology/assets/brand/fav.png?v=20260602" />
+    <style>
+      :root {
+        --ink: #0b1728;
+        --muted: #5f6d7f;
+        --line: #d8e0ea;
+        --paper: #f6f8fb;
+        --white: #ffffff;
+        --blue: #0b45d9;
+        --cyan: #1787c8;
+        --orange: #c8442f;
+        --gold: #9d6b1c;
+        --radius: 8px;
+        --shadow: 0 18px 46px rgba(11, 23, 40, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background:
+          linear-gradient(120deg, rgba(11, 69, 217, 0.1), transparent 42%),
+          linear-gradient(180deg, #f8fafc 0%, #eef4fb 100%);
+        color: var(--ink);
+        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      .landing {
+        width: min(1180px, calc(100% - 40px));
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 34px 0 52px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .brand img {
+        width: clamp(150px, 16vw, 220px);
+        display: block;
+      }
+
+      .hero {
+        display: grid;
+        gap: 22px;
+        padding: clamp(70px, 11vw, 118px) 0 40px;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--gold);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 840px;
+        margin: 0;
+        font-size: clamp(2.35rem, 5vw, 4.85rem);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .hero p:not(.eyebrow) {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.5vw, 1.18rem);
+      }
+
+      .choice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+
+      .choice-card {
+        position: relative;
+        min-height: 280px;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        box-shadow: var(--shadow);
+        color: inherit;
+        overflow: hidden;
+        transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      }
+
+      .choice-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(11, 69, 217, 0.28);
+        box-shadow: 0 24px 60px rgba(11, 23, 40, 0.14);
+      }
+
+      .choice-card span {
+        display: inline-flex;
+        width: 46px;
+        height: 46px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 70px;
+        border-radius: var(--radius);
+        background: var(--paper);
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .choice-card h2 {
+        margin: 0 0 12px;
+        font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+        line-height: 1.1;
+      }
+
+      .choice-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .choice-card strong {
+        position: absolute;
+        right: 24px;
+        bottom: 22px;
+        color: var(--blue);
+        font-size: 0.88rem;
+      }
+
+      .choice-card.realestate span {
+        color: var(--orange);
+      }
+
+      .choice-card.education span {
+        color: var(--cyan);
+      }
+
+      footer {
+        margin-top: 44px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      @media (max-width: 860px) {
+        .choice-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .choice-card {
+          min-height: 220px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="landing">
+        <a class="brand" href="./" aria-label="Managix Global home">
+        <img src="technology/assets/brand/managix-logo-light-base-colored.png" alt="Managix Technology" />
+      </a>
+
       <section class="hero">
-        <div class="hero-inner">
-          <div data-reveal>
-            <p class="eyebrow">CMMI Level 3 | SAP | AWS | Microsoft | GIS | Cloud</p>
-            <h1>We build technology that makes organizations faster, smarter and impossible to ignore.</h1>
-            <p class="hero-copy">
-              Managix Technology helps ambitious teams launch enterprise software, GIS mapping systems,
-              cloud platforms, mobile products, dashboards and digital growth engines with speed,
-              discipline and measurable business impact.
-            </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="contact">Build With Us</a>
-              <a class="button button-ghost" href="calculator">Estimate Project Cost</a>
-              <a class="button button-ghost" href="portfolio">See Proof</a>
-            </div>
-          </div>
-          <div class="signal-panel" data-reveal>
-            <div class="signal-card"><strong>2012</strong><span>Delivering serious technology since</span></div>
-            <div class="signal-card"><strong>CMMI 3</strong><span>Process maturity for dependable execution</span></div>
-            <div class="signal-card"><strong>GIS + Cloud</strong><span>Mapping, mobility, dashboards and data systems</span></div>
-          </div>
-        </div>
+        <p class="eyebrow">Managix Global</p>
+        <h1>Choose the Managix vertical you want to explore.</h1>
+        <p>Managix Global brings together focused businesses in real estate, enterprise technology and education. Select a division to continue.</p>
       </section>
 
-      <section class="partners" aria-label="Partner ecosystem">
-        <div class="partner-strip">
-          <div class="partner-logo" data-reveal><img src="assets/partners/sap-logo.png" alt="SAP Partner" /><span>SAP Partner</span></div>
-          <div class="partner-logo" data-reveal><img src="assets/partners/aws-logo.png" alt="AWS Partner" /><span>AWS Partner</span></div>
-          <div class="partner-logo" data-reveal><img src="assets/partners/microsoft-partner-network-logo.png" alt="Microsoft Partner Network" /><span>Microsoft Partner Network</span></div>
-        </div>
+      <section class="choice-grid" aria-label="Managix divisions">
+        <a class="choice-card realestate" href="realestate">
+          <span>01</span>
+          <h2>Real Estate</h2>
+          <p>Property, advisory and real estate solutions from Managix.</p>
+          <strong>Visit Real Estate</strong>
+        </a>
+
+        <a class="choice-card technology" href="technology">
+          <span>02</span>
+          <h2>Technology</h2>
+          <p>Enterprise software, GIS, cloud, dashboards, mobile and digital transformation.</p>
+          <strong>Visit Technology</strong>
+        </a>
+
+        <a class="choice-card education" href="education">
+          <span>03</span>
+          <h2>Education</h2>
+          <p>Learning, skilling and education initiatives from Managix.</p>
+          <strong>Visit Education</strong>
+        </a>
       </section>
 
-      <section class="section" data-reveal>
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Why Managix</p>
-            <h2>Strategy, engineering and execution under one roof.</h2>
-          </div>
-          <p>We do not just make websites or apps. We design operational systems that help leaders see, decide, act and scale.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card"><span class="number">01</span><h3>Enterprise Delivery</h3><p>Structured planning, execution, monitoring, quality assurance, risk management and continuous improvement.</p></article>
-          <article class="card"><span class="number">02</span><h3>Location Intelligence</h3><p>GIS, mapping, location-based projects, data collection and field-ready platforms for real-world operations.</p></article>
-          <article class="card"><span class="number">03</span><h3>Digital Growth</h3><p>Cloud products, mobile apps, dashboards, SEO, social campaigns and market-ready digital experiences.</p></article>
-        </div>
-      </section>
-
-      <section class="section tech-band">
-        <div class="section-heading" data-reveal>
-          <div>
-            <p class="eyebrow">Great technology, practical outcomes</p>
-            <h2>Built for scale, visibility and control.</h2>
-          </div>
-          <p>From government-scale data systems to commercial mobile products, our work is designed for reliability and adoption.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card" data-reveal><h3>Cloud Architecture</h3><p>AWS, Azure, DigitalOcean, Linux servers, scalable applications and managed infrastructure.</p></article>
-          <article class="card" data-reveal><h3>Modern Engineering</h3><p>Angular, Node.js, React Native, LAMP, MongoDB and custom stacks chosen around the mission.</p></article>
-          <article class="card" data-reveal><h3>Quality Systems</h3><p>CMMI Level 3 process maturity for planning, configuration, measurement, quality and risk management.</p></article>
-        </div>
-      </section>
-
-      <section class="section" data-reveal>
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Featured impact</p>
-            <h2>Mapping, GIS, disaster response and enterprise systems.</h2>
-          </div>
-          <p>Our portfolio includes platforms where accuracy, speed and field visibility matter.</p>
-        </div>
-        <div class="project-grid">
-          <a class="project-card featured" href="project-tech-mahindra-maps" aria-label="View Tech Mahindra Google Maps and Apple Maps case study">
-            <p class="eyebrow">Tech Mahindra project</p>
-            <h3>Google Maps and Apple Maps data project</h3>
-            <p>
-              Managix supported mapping and location-data work for Tech Mahindra, contributing to
-              Google Maps and Apple Maps project requirements involving GIS, mapping, data collection
-              and location-based execution.
-            </p>
-            <div class="tag-list"><span>GIS</span><span>Maps Data</span><span>Location Intelligence</span><span>Tech Mahindra</span></div>
-          </a>
-          <a class="project-card" href="project-adpc-care" aria-label="View ADPC CARE Program case study"><h3>ADPC CARE Program</h3><p>Climate adaptation and knowledge management solution for learning resources and resilience-focused programs.</p></a>
-          <a class="project-card" href="project-krishi-samriddhi-school" aria-label="View Krishi Samriddhi School case study"><h3>Krishi Samriddhi School</h3><p>Digital agriculture education platform for learning, outreach and community engagement.</p></a>
-          <a class="project-card" href="project-vajranaad" aria-label="View Vajranaad case study"><h3>Vajranaad</h3><p>Lightning early warning alert system using satellite feeds, IoT devices, cloud servers and automated alarms.</p></a>
-        </div>
-      </section>
-
-      <section class="section" data-reveal>
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Clients</p>
-            <h2>Trusted by public, development and enterprise organizations.</h2>
-          </div>
-          <p>We work where software must perform beyond the demo: on the ground, in the field and inside real operations.</p>
-        </div>
-        <div class="client-grid">
-          <div class="client-logo"><img src="assets/clients/ministry-of-rural-development.png" alt="Ministry of Rural Development" /><span>Ministry of Rural Development</span></div>
-          <div class="client-logo"><img src="assets/clients/disaster-management-bihar.jpeg" alt="Disaster Management Bihar" /><span>Disaster Management Bihar</span></div>
-          <div class="client-logo"><img src="assets/clients/dept-of-agriculture-govt-of-india.png" alt="Dept of Agriculture Govt of India" /><span>Dept of Agriculture Govt of India</span></div>
-          <div class="client-logo"><img src="assets/clients/adpc-logo.jpg" alt="ADPC" /><span>ADPC</span></div>
-          <div class="client-logo"><img src="assets/clients/tech-mahindra.png" alt="Tech Mahindra" /><span>Tech Mahindra</span></div>
-          <div class="client-logo"><img src="assets/clients/iit-delhi.png" alt="IIT Delhi" /><span>IIT Delhi</span></div>
-          <div class="client-logo"><img src="assets/clients/pradan-logo.png" alt="PRADAN" /><span>PRADAN</span></div>
-          <div class="client-logo"><img src="assets/clients/twerlo-ai.png" alt="Twerlo AI" /><span>Twerlo AI</span></div>
-          <div class="client-logo"><img src="assets/clients/al-oufi-group.png" alt="Al Oufi Group" /><span>Al Oufi Group</span></div>
-          <div class="client-logo"><img src="assets/clients/emedix.png" alt="EMEDIX" /><span>EMEDIX</span></div>
-        </div>
-      </section>
-
-      <section class="section certification-band" data-reveal>
-        <div>
-          <p class="eyebrow">Certified delivery discipline</p>
-          <h2>CMMI DEV v2.0 Maturity Level 3.</h2>
-          <p>
-            Appraised for IT services, consulting, software and application development, GIS, mapping,
-            data collection, location-based projects, digital marketing, project management,
-            engineering, quality assurance and operations.
-          </p>
-        </div>
-        <div class="certificate-card">
-          <span>Certificate No. 26MTM1011</span>
-          <strong>Maturity Level 3</strong>
-          <p>Valid until 11/01/2029</p>
-          <a class="button button-primary" href="assets/cmmi-level-3-certificate.pdf" download>Download Certificate</a>
-        </div>
-      </section>
-
-      <section class="cta-panel" data-reveal>
-        <p class="eyebrow">Your next system can be sharper</p>
-        <h2>Bring us the problem. We will bring the technology, process and momentum.</h2>
-        <p>Whether you need enterprise software, GIS data execution, cloud migration, a mobile product or a digital growth engine, Managix is built to move serious work forward.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="contact">Talk to Managix</a>
-          <a class="button button-ghost" href="calculator">Calculate Investment</a>
-          <a class="button button-ghost" href="careers">Join the Team</a>
-          <a class="button button-ghost" href="services">Explore Services</a>
-        </div>
-      </section>
+      <footer>
+        Managix Technology and Management Services LLP | info@managixglobal.com
+      </footer>
     </main>
-<?php include __DIR__ . '/partials/footer.php'; ?>
+  </body>
+</html>

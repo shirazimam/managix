@@ -13,3 +13,7 @@ assets/projects/**/*.mp4
 assets/projects/**/*.mov
 assets/projects/**/*.m4v
 assets/projects/**/*.webm
+technology/assets/projects/**/*.mp4
+technology/assets/projects/**/*.mov
+technology/assets/projects/**/*.m4v
+technology/assets/projects/**/*.webm

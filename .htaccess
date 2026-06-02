@@ -2,14 +2,18 @@ DirectoryIndex index.php
 
 Options -MultiViews
 RewriteEngine On
-AddType video/mp4 .mp4 .m4v
 
-# Redirect visible .php page URLs to clean URLs for normal browser requests.
+# Preserve clean URLs for the section directories.
+RewriteCond %{REQUEST_URI} ^(.*/)?(technology|realestate|education)$ [NC]
+RewriteRule ^ %1%2/ [R=301,L,NE]
+
+# Redirect old root technology URLs into the new /technology section.
 RewriteCond %{REQUEST_METHOD} !POST
-RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
-RewriteRule ^ /%1 [R=301,L,NE]
+RewriteCond %{REQUEST_URI} ^(.*/)?(about|services|industries|portfolio|insights|careers|calculator|contact|project-tech-mahindra-maps|project-vajranaad|project-bcims|project-adpc-care|project-krishi-samriddhi-school|project-rhkn-portal|project-megh-mitr|project-sambal|project-emedix|project-school-mobile-applications|project-enterprise-applications)(?:\.php)?/?$ [NC]
+RewriteRule ^ %1technology/%2 [R=301,L,NE]
 
-# Serve /page from /page.php when the matching PHP file exists.
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.+?)/?$ $1.php [L,QSA]
+# Keep root index.php clean.
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} \s/+index\.php[\s?] [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)?index\.php$ [NC]
+RewriteRule ^ %1 [R=301,L,NE]
