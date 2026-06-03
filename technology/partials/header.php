@@ -13,7 +13,7 @@ $activePage = $activePage ?? '';
     <link rel="icon" type="image/png" href="assets/brand/fav.png?v=20260601" />
     <link rel="apple-touch-icon" href="assets/brand/fav.png?v=20260601" />
     <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="stylesheet" href="styles.css?v=20260602-megh-mitr" />
+    <link rel="stylesheet" href="styles.css?v=20260603-emedix-gc" />
   </head>
   <body>
     <header class="site-header">

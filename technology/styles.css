@@ -573,6 +573,11 @@ h3 {
   object-fit: cover;
 }
 
+.project-media.feature-showcase img {
+  aspect-ratio: 1024 / 500;
+  object-fit: cover;
+}
+
 .project-media.mobile-showcase {
   grid-template-columns: repeat(2, minmax(220px, 360px));
   justify-content: center;
@@ -654,6 +659,19 @@ h3 {
   background:
     radial-gradient(circle at 20% 20%, rgba(0, 71, 255, 0.1), transparent 30%),
     linear-gradient(135deg, #ffffff, #f4f8fc);
+}
+
+.app-flow-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-content: center;
+  align-items: center;
+  padding: 28px;
+  border-left: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(33, 180, 178, 0.16), transparent 30%),
+    linear-gradient(135deg, #ffffff, #f2fbfb);
 }
 
 .flow-node {
@@ -1443,7 +1461,8 @@ html:not(.js-ready) [data-reveal] {
     grid-template-columns: 1fr;
   }
 
-  .megh-flow-diagram {
+  .megh-flow-diagram,
+  .app-flow-diagram {
     border-top: 1px solid var(--line);
     border-left: 0;
   }
@@ -1546,7 +1565,8 @@ html:not(.js-ready) [data-reveal] {
     grid-template-columns: 1fr;
   }
 
-  .megh-flow-diagram {
+  .megh-flow-diagram,
+  .app-flow-diagram {
     display: grid;
     grid-template-columns: 1fr;
   }
