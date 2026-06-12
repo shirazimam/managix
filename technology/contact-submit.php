@@ -3,6 +3,7 @@ session_start();
 
 $pageTitle = 'Enquiry Status | Managix Technology';
 $pageDescription = 'Contact form submission status for Managix Technology.';
+$pageRobots = 'noindex, nofollow';
 $activePage = 'contact';
 
 function clean_text(string $value, int $maxLength = 1200): string

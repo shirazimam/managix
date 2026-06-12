@@ -1,12 +1,15 @@
 <?php
 $pageTitle = 'Managix Real Estate | Coming Soon';
+$pageDescription = 'Managix Real Estate is preparing property, development and real estate service experiences from Managix Global.';
 ?>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>" />
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
+<?php include __DIR__ . '/../partials/seo.php'; ?>
     <link rel="icon" type="image/png" href="../technology/assets/brand/fav.png?v=20260602" />
     <style>
       * { box-sizing: border-box; }

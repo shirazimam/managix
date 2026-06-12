@@ -10,6 +10,7 @@ $activePage = $activePage ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>" />
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
+<?php include __DIR__ . '/../../partials/seo.php'; ?>
     <link rel="icon" type="image/png" href="assets/brand/fav.png?v=20260601" />
     <link rel="apple-touch-icon" href="assets/brand/fav.png?v=20260601" />
     <link rel="preconnect" href="https://images.unsplash.com" />
