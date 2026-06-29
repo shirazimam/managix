@@ -1,932 +1,272 @@
-<?php
-$pageTitle = 'Taito, The Skills Lab | Managix Education';
-$pageDescription = 'Taito, The Skills Lab is the education division of Managix Global, offering Finnish STEAM CPD workshops, teacher development, university admissions and career counselling.';
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>" />
-    <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
-<?php include __DIR__ . '/../partials/seo.php'; ?>
-    <link rel="icon" type="image/png" href="../technology/assets/brand/fav.png?v=20260602" />
-    <link rel="apple-touch-icon" href="../technology/assets/brand/fav.png?v=20260602" />
-    <style>
-      :root {
-        --navy: #163462;
-        --navy-2: #102544;
-        --navy-3: #0a1629;
-        --gold: #d97706;
-        --gold-2: #f59e0b;
-        --paper: #f6f8fc;
-        --white: #ffffff;
-        --ink: #0d1829;
-        --muted: #66758a;
-        --line: #d9e2ef;
-        --blue: #2563eb;
-        --teal: #0d9488;
-        --green: #059669;
-        --violet: #7c3aed;
-        --radius: 8px;
-        --shadow: 0 22px 56px rgba(10, 22, 41, 0.14);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        background: var(--paper);
-        color: var(--ink);
-        font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
-        line-height: 1.65;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 22px;
-        padding: 16px clamp(20px, 5vw, 68px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        background: rgba(10, 22, 41, 0.94);
-        backdrop-filter: blur(16px);
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        color: var(--white);
-        font-weight: 900;
-      }
-
-      .brand img {
-        width: 156px;
-      }
-
-      .brand span {
-        display: inline-flex;
-        padding: 6px 10px;
-        border: 1px solid rgba(245, 158, 11, 0.34);
-        border-radius: var(--radius);
-        color: #f7c979;
-        font-size: 0.74rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .site-nav {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        color: #dce8f7;
-        font-size: 0.92rem;
-        font-weight: 800;
-      }
-
-      .site-nav a:hover {
-        color: #f7c979;
-      }
-
-      .nav-cta,
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 44px;
-        padding: 11px 17px;
-        border: 1px solid transparent;
-        border-radius: var(--radius);
-        font-weight: 900;
-        line-height: 1.2;
-        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-      }
-
-      .nav-cta,
-      .button-primary {
-        background: linear-gradient(135deg, var(--gold), var(--gold-2));
-        color: #15110a;
-        box-shadow: 0 14px 32px rgba(217, 119, 6, 0.24);
-      }
-
-      .button-secondary {
-        border-color: rgba(255, 255, 255, 0.2);
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--white);
-      }
-
-      .button-light {
-        border-color: var(--line);
-        background: var(--white);
-        color: var(--ink);
-      }
-
-      .button:hover,
-      .nav-cta:hover {
-        transform: translateY(-2px);
-      }
-
-      .hero {
-        position: relative;
-        overflow: hidden;
-        background:
-          linear-gradient(90deg, rgba(10, 22, 41, 0.94), rgba(16, 37, 68, 0.82), rgba(22, 52, 98, 0.58)),
-          url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=2200&q=82") center / cover;
-        color: var(--white);
-      }
-
-      .hero::before {
-        position: absolute;
-        inset: 0;
-        background:
-          linear-gradient(90deg, rgba(245, 158, 11, 0.18) 1px, transparent 1px),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-        background-size: 58px 58px;
-        content: "";
-        opacity: 0.28;
-      }
-
-      .hero-inner,
-      .section,
-      .footer-inner {
-        width: min(1180px, calc(100% - 42px));
-        margin: 0 auto;
-      }
-
-      .hero-inner {
-        position: relative;
-        display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.74fr);
-        gap: clamp(34px, 6vw, 76px);
-        align-items: center;
-        min-height: 720px;
-        padding: 96px 0;
-      }
-
-      .eyebrow {
-        margin: 0 0 12px;
-        color: #f7c979;
-        font-size: 0.76rem;
-        font-weight: 900;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin-top: 0;
-      }
-
-      h1 {
-        max-width: 760px;
-        margin-bottom: 22px;
-        font-size: clamp(3rem, 7vw, 6.5rem);
-        font-weight: 950;
-        letter-spacing: 0;
-        line-height: 0.95;
-      }
-
-      h2 {
-        margin-bottom: 14px;
-        font-size: clamp(2rem, 3vw, 3rem);
-        line-height: 1.14;
-      }
-
-      h3 {
-        margin-bottom: 10px;
-        font-size: 1.16rem;
-        line-height: 1.3;
-      }
-
-      .hero-copy > p:not(.eyebrow) {
-        max-width: 690px;
-        color: #dbeafe;
-        font-size: 1.12rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 30px;
-      }
-
-      .taito-card {
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.13);
-        border-radius: var(--radius);
-        background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
-        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
-        backdrop-filter: blur(16px);
-      }
-
-      .taito-card::before,
-      .taito-card::after {
-        position: absolute;
-        right: 0;
-        left: 0;
-        height: 5px;
-        background: linear-gradient(90deg, var(--gold), var(--gold-2), var(--gold));
-        content: "";
-      }
-
-      .taito-card::before {
-        top: 0;
-      }
-
-      .taito-card::after {
-        bottom: 0;
-      }
-
-      .taito-brand {
-        padding: 30px;
-      }
-
-      .taito-brand strong {
-        display: block;
-        margin-bottom: 8px;
-        color: var(--white);
-        font-size: clamp(3rem, 7vw, 4.4rem);
-        font-weight: 950;
-        letter-spacing: 0;
-        line-height: 0.94;
-      }
-
-      .gold-line {
-        width: 150px;
-        height: 4px;
-        margin-bottom: 12px;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--gold), transparent);
-      }
-
-      .taito-brand span {
-        display: block;
-        color: #bfdbfe;
-        font-weight: 800;
-      }
-
-      .taito-brand p {
-        margin: 16px 0 0;
-        color: #bac9dc;
-      }
-
-      .division-badge {
-        display: inline-flex;
-        margin-top: 18px;
-        padding: 8px 12px;
-        border-radius: var(--radius);
-        background: var(--gold);
-        color: var(--white);
-        font-size: 0.76rem;
-        font-weight: 900;
-      }
-
-      .section {
-        padding: 86px 0;
-      }
-
-      .section-heading {
-        display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
-        gap: 34px;
-        align-items: end;
-        margin-bottom: 34px;
-      }
-
-      .section-heading p:not(.eyebrow),
-      .card p,
-      .feature-panel p,
-      .contact-card p,
-      .list li {
-        color: var(--muted);
-      }
-
-      .service-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 14px;
-      }
-
-      .service-card,
-      .feature-panel,
-      .contact-card,
-      .mini-card {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-        box-shadow: var(--shadow);
-      }
-
-      .service-card {
-        position: relative;
-        overflow: hidden;
-        min-height: 230px;
-        padding: 22px 18px;
-        transition: transform 180ms ease, box-shadow 180ms ease;
-      }
-
-      .service-card::before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        height: 4px;
-        background: var(--accent, var(--gold));
-        content: "";
-      }
-
-      .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 28px 62px rgba(10, 22, 41, 0.18);
-      }
-
-      .service-mark {
-        display: inline-flex;
-        width: 46px;
-        height: 46px;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-        border-radius: var(--radius);
-        background: var(--accent, var(--gold));
-        color: var(--white);
-        font-size: 0.82rem;
-        font-weight: 950;
-      }
-
-      .status {
-        display: inline-flex;
-        margin-top: 12px;
-        padding: 5px 10px;
-        border: 1px solid rgba(217, 119, 6, 0.26);
-        border-radius: 999px;
-        background: rgba(245, 158, 11, 0.1);
-        color: #a75500;
-        font-size: 0.72rem;
-        font-weight: 900;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      .split {
-        display: grid;
-        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
-        gap: 22px;
-        align-items: start;
-      }
-
-      .feature-panel {
-        overflow: hidden;
-      }
-
-      .feature-head {
-        padding: 30px;
-        background:
-          linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-          linear-gradient(135deg, var(--navy-2), var(--navy));
-        background-size: 36px 36px, 36px 36px, auto;
-        color: var(--white);
-      }
-
-      .feature-head p {
-        color: #dbeafe;
-      }
-
-      .feature-body {
-        padding: 30px;
-      }
-
-      .list {
-        display: grid;
-        gap: 12px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-      }
-
-      .list li {
-        display: grid;
-        grid-template-columns: 10px 1fr;
-        gap: 12px;
-        align-items: start;
-      }
-
-      .list li::before {
-        width: 8px;
-        height: 8px;
-        margin-top: 9px;
-        border-radius: 999px;
-        background: var(--accent, var(--gold));
-        content: "";
-      }
-
-      .pathway-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-
-      .session-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 16px;
-      }
-
-      .mini-card {
-        padding: 24px;
-      }
-
-      .mini-card strong {
-        display: block;
-        margin-bottom: 10px;
-        color: var(--navy);
-        font-size: 1.05rem;
-      }
-
-      .price-strip {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-        margin-top: 24px;
-      }
-
-      .price-item {
-        padding: 18px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: #f8fbff;
-      }
-
-      .price-item span {
-        display: block;
-        margin-bottom: 4px;
-        color: var(--gold);
-        font-size: 0.78rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .price-item strong {
-        display: block;
-        color: var(--navy);
-        font-size: 1.2rem;
-      }
-
-      .dark-band {
-        background:
-          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-          linear-gradient(135deg, var(--navy-3), var(--navy-2));
-        background-size: 54px 54px, 54px 54px, auto;
-        color: var(--white);
-      }
-
-      .dark-band .section-heading p:not(.eyebrow),
-      .dark-band .mini-card p {
-        color: #c6d4e5;
-      }
-
-      .dark-band .mini-card {
-        border-color: rgba(255, 255, 255, 0.12);
-        background: rgba(255, 255, 255, 0.07);
-        box-shadow: none;
-      }
-
-      .dark-band .mini-card strong {
-        color: var(--white);
-      }
-
-      .contact-card {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 28px;
-        align-items: center;
-        padding: clamp(28px, 5vw, 48px);
-      }
-
-      .contact-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 20px;
-      }
-
-      .contact-links a,
-      .contact-links span {
-        display: inline-flex;
-        padding: 9px 12px;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: #f8fbff;
-        color: #33445b;
-        font-weight: 800;
-      }
-
-      .form-panel {
-        overflow: hidden;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--white);
-        box-shadow: var(--shadow);
-      }
-
-      .form-panel iframe {
-        display: block;
-        width: 100%;
-        min-height: 920px;
-        border: 0;
-        background: var(--white);
-      }
-
-      .site-footer {
-        background: var(--navy-3);
-        color: #b9c7d8;
-      }
-
-      .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: 24px;
-        padding: 34px 0;
-        font-size: 0.92rem;
-      }
-
-      .footer-inner nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        font-weight: 800;
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(18px);
-        transition: opacity 700ms ease, transform 700ms ease;
-      }
-
-      .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      @media (max-width: 1040px) {
-        .hero-inner,
-        .section-heading,
-        .split,
-        .contact-card {
-          grid-template-columns: 1fr;
-        }
-
-        .service-grid,
-        .pathway-grid,
-        .session-grid,
-        .price-strip {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 760px) {
-        .site-header {
-          position: static;
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .site-nav {
-          width: 100%;
-          flex-wrap: wrap;
-          gap: 12px;
-        }
-
-        .hero-inner,
-        .section,
-        .footer-inner {
-          width: min(100% - 28px, 1180px);
-        }
-
-        .hero-inner {
-          min-height: auto;
-          padding: 68px 0;
-        }
-
-        .service-grid,
-        .pathway-grid,
-        .session-grid,
-        .price-strip {
-          grid-template-columns: 1fr;
-        }
-
-        .footer-inner {
-          flex-direction: column;
-        }
-
-        .form-panel iframe {
-          min-height: 980px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="../" aria-label="Managix Global home">
-        <img src="../technology/assets/brand/managix-logo-light-base-colored.png" alt="Managix Global" />
-        <span>Education</span>
-      </a>
-      <nav class="site-nav" aria-label="Education navigation">
-        <a href="#services">Services</a>
-        <a href="#teacher-cpd">Teacher CPD</a>
-        <a href="#finnish-steam-cpd">CPD Sessions</a>
-        <a href="#counselling">Admissions</a>
-        <a href="#workshop-application">Apply</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#workshop-application">Apply for Workshop</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Education Division of Managix Global</p>
-            <h1>TAITO</h1>
-            <p>Taito, The Skills Lab helps learners, educators and institutions learn differently through Finnish STEAM CPD workshops, practical teacher development, international university guidance and future-ready education services.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#services">Explore Services</a>
-              <a class="button button-secondary" href="#workshop-application">Apply for Workshop</a>
-            </div>
-          </div>
-
-          <aside class="taito-card reveal" aria-label="Taito brand summary">
-            <div class="taito-brand">
-              <strong>TAITO</strong>
-              <div class="gold-line"></div>
-              <span>The Skills Lab</span>
-              <p>Learn Differently. Empowering learners, educators and institutions across the world.</p>
-              <div class="division-badge">Education Division of Managix Global</div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section" id="services">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Our Services</p>
-            <h2>Practical education support for classrooms, careers and institutions.</h2>
-          </div>
-          <p>Taito begins with Finnish STEAM CPD workshops for teachers in Saudi Arabia, teacher development for international schools, and university admissions with career counselling. Additional services are being developed for corporate training, education consultancy and school accreditation.</p>
-        </div>
-
-        <div class="service-grid">
-          <article class="service-card reveal" style="--accent: var(--teal);">
-            <div class="service-mark">CPD</div>
-            <h3>Teacher CPD</h3>
-            <p>Curriculum-aligned professional development for international school teachers.</p>
-          </article>
-          <article class="service-card reveal" style="--accent: var(--blue);">
-            <div class="service-mark">CT</div>
-            <h3>Corporate Training</h3>
-            <p>IT and business professional development programs for working teams.</p>
-            <span class="status">Coming Soon</span>
-          </article>
-          <article class="service-card reveal" style="--accent: var(--violet);">
-            <div class="service-mark">EC</div>
-            <h3>Education Consultancy</h3>
-            <p>Strategic support for schools, learning teams and education institutions.</p>
-            <span class="status">Coming Soon</span>
-          </article>
-          <article class="service-card reveal" style="--accent: var(--green);">
-            <div class="service-mark">UC</div>
-            <h3>University Admissions and Career Counselling</h3>
-            <p>British Council certified guidance for international university pathways.</p>
-          </article>
-          <article class="service-card reveal" style="--accent: var(--gold);">
-            <div class="service-mark">SA</div>
-            <h3>School Accreditation</h3>
-            <p>International accreditation support for schools and institutions.</p>
-            <span class="status">Coming Soon</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="finnish-steam-cpd">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Finnish STEAM CPD</p>
-            <h2>Subject-specific CPD workshops for teachers in Saudi Arabia.</h2>
-          </div>
-          <p>Designed for Science, Mathematics and English teachers at American and British curriculum international schools, these live online sessions focus on practical Finnish pedagogy applied to real classroom standards.</p>
-        </div>
-
-        <div class="session-grid">
-          <article class="mini-card reveal">
-            <strong>Science: Forces and Motion the Finnish Way</strong>
-            <p>Transform concept lessons into authentic scientific investigations that develop curiosity, inquiry and scientific reasoning. Aligned with NGSS Force and Motion standards for Grades 3 to 7.</p>
-          </article>
-          <article class="mini-card reveal">
-            <strong>Mathematics: Area and Measurement the Finnish Way</strong>
-            <p>Practical strategies for building conceptual understanding and mathematical curiosity. Aligned with CCSS 3.MD.5 to 3.MD.7 for Grades 3 to 7.</p>
-          </article>
-          <article class="mini-card reveal">
-            <strong>English: Collaborative Speaking the Finnish Way</strong>
-            <p>Create low-pressure speaking opportunities that promote confidence, collaboration and meaningful communication for Arabic-speaking second language learners.</p>
-          </article>
-          <article class="mini-card reveal">
-            <strong>English: Vocabulary the Finnish Way</strong>
-            <p>Integrate STEAM into Greek and Latin root word lessons through hands-on discovery experiences that deepen word understanding, retention and language curiosity.</p>
-          </article>
-        </div>
-
-        <div class="price-strip reveal">
-          <div class="price-item">
-            <span>Format</span>
-            <strong>1.5 hours live online</strong>
-          </div>
-          <div class="price-item">
-            <span>Individual</span>
-            <strong>SAR 400 per teacher</strong>
-          </div>
-          <div class="price-item">
-            <span>Group Rate</span>
-            <strong>SAR 350 for 12+ teachers</strong>
-          </div>
-          <div class="price-item">
-            <span>Tentative Date</span>
-            <strong>6 August 2026</strong>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="teacher-cpd">
-        <div class="split">
-          <article class="feature-panel reveal">
-            <div class="feature-head">
-              <p class="eyebrow">Teacher CPD</p>
-              <h2>Professional development that teachers can use immediately.</h2>
-              <p>Each session is built around one classroom-ready teaching strategy. Finnish pedagogy stays in the foreground, while STEAM provides the real-world context that makes learning active and memorable.</p>
-            </div>
-            <div class="feature-body">
-              <ul class="list" style="--accent: var(--teal);">
-                <li>CPD for teachers following British and American curricula.</li>
-                <li>Science, Mathematics and English for Grades K to 12.</li>
-                <li>Live online interactive sessions for active participation.</li>
-                <li>Informed by Finnish pedagogy and evidence-based approaches to learning.</li>
-                <li>STEAM-integrated teaching strategies teachers can use in the next lesson.</li>
-                <li>Electronic CPD certificate and digital strategy card on completion.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="feature-panel reveal" id="counselling">
-            <div class="feature-head">
-              <p class="eyebrow">Admissions and Counselling</p>
-              <h2>Personalised guidance for global university pathways.</h2>
-              <p>Delivered by a British Council Certified Academic Counsellor with experience supporting students from international schools in Saudi Arabia.</p>
-            </div>
-            <div class="feature-body">
-              <ul class="list" style="--accent: var(--green);">
-                <li>International university admissions support.</li>
-                <li>Guidance for universities in New Zealand, USA, Australia and the UK.</li>
-                <li>Career counselling and academic pathway planning.</li>
-                <li>Personal statement and application support.</li>
-                <li>University shortlisting tailored to each student's profile.</li>
-                <li>Support from a British Council Certified Academic Counsellor.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="dark-band">
-        <div class="section">
-            <div class="section-heading reveal">
-              <div>
-                <p class="eyebrow">Coming Next</p>
-                <h2>More services are being shaped for schools, teams and education leaders.</h2>
-            </div>
-            <p>Register interest now and Taito will share updates as each new service becomes available.</p>
-          </div>
-
-          <div class="pathway-grid">
-            <article class="mini-card reveal">
-              <strong>Corporate Training</strong>
-              <p>IT, business and professional development for organizations that want structured upskilling.</p>
-            </article>
-            <article class="mini-card reveal">
-              <strong>Education Consultancy</strong>
-              <p>Strategic school support for learning design, academic planning and institutional improvement.</p>
-            </article>
-            <article class="mini-card reveal">
-              <strong>School Accreditation Support</strong>
-              <p>Guidance for institutions preparing for international accreditation and quality benchmarks.</p>
-            </article>
-          </div>
-
-          <div class="pathway-grid" style="margin-top: 16px;">
-            <article class="mini-card reveal">
-              <strong>Teaching Elementary Mathematics the Finnish Way</strong>
-              <p>Taito-delivered Finnish STEAM pedagogy for KG3 to Grade 5, using real-world design and construction challenges for mathematical discovery.</p>
-            </article>
-            <article class="mini-card reveal">
-              <strong>Closing the Language Gap</strong>
-              <p>Finnish STEAM strategies for early childhood English, using arts, play, movement and making for language development in KG1 to Grade 2.</p>
-            </article>
-            <article class="mini-card reveal">
-              <strong>Cognia-Aligned Finnish Classroom Practice</strong>
-              <p>Practical classroom evidence for accreditation, cross-disciplinary projects and continuous improvement in American curriculum schools.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="workshop-application">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Workshop Application</p>
-            <h2>Apply for the Taito workshop.</h2>
-          </div>
-          <p>Use the form below to share your details for the workshop. For direct support, contact Taito on phone, WhatsApp or email using the details on this page.</p>
-        </div>
-
-        <div class="form-panel reveal">
-          <iframe
-            title="Taito workshop application form"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSd0AJnLwW8EN4p00o4RUZMpLohAEum59HXgiMwu3c5Ch5v1MQ/viewform?embedded=true"
-            loading="lazy">Loading...</iframe>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="contact-card reveal">
-          <div>
-            <p class="eyebrow">Get in Touch</p>
-            <h2>Bring Taito to your classroom, institution or student pathway.</h2>
-            <p>Tell us whether you are enquiring about Teacher CPD, university admissions guidance, a workshop application or an upcoming Taito service.</p>
-            <div class="contact-links">
-              <a href="tel:+966571224121">Phone: +966 57 122 4121</a>
-              <a href="https://wa.me/966571224121" target="_blank" rel="noopener">WhatsApp: +966 57 122 4121</a>
-              <a href="mailto:urooj@managix.in?subject=Taito%20Education%20Enquiry">urooj@managix.in</a>
-            </div>
-          </div>
-          <a class="button button-primary" href="#workshop-application">Apply for Workshop</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div>
-          <strong>Taito, The Skills Lab</strong><br />
-          Education Division of Managix Global
-        </div>
-        <nav aria-label="Footer navigation">
-          <a href="../">Managix Global</a>
-          <a href="../technology/">Technology</a>
-          <a href="../digitalmarketing/">Digital Marketing</a>
-          <a href="../realestate/">Real Estate</a>
-          <a href="mailto:urooj@managix.in">Contact</a>
-        </nav>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taito, The Skills Lab — Education Division of Managix Global</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  :root {
+    --navy:#1B3A6B; --navy2:#14294D; --navy3:#0F1F3D;
+    --gold:#D97706; --gold2:#F59E0B;
+    --white:#FFFFFF; --lblue:#93C5FD; --ltblue:#BFDBFE;
+    --grey:#94A3B8; --slate:#475569;
+    --teal:#0D9488; --blue:#2563EB; --purp:#7C3AED;
+    --green:#059669; --orange:#EA580C;
+  }
+  body { font-family:'Inter',system-ui,sans-serif; background:var(--navy3); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:20px; }
+
+  /* BANNER */
+  .banner { width:100%; max-width:1440px; background:linear-gradient(135deg,var(--navy3) 0%,var(--navy2) 40%,var(--navy) 100%); border-radius:16px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,0.5); position:relative; }
+  .banner::before { content:''; position:absolute; top:0;left:0;right:0; height:6px; background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold)); }
+  .banner::after  { content:''; position:absolute; bottom:0;left:0;right:0; height:4px; background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold)); }
+  .deco { position:absolute; right:-80px; top:50%; transform:translateY(-50%); width:500px; height:500px; pointer-events:none; opacity:0.06; }
+  .deco circle { fill:none; stroke:white; }
+  .inner { display:grid; grid-template-columns:280px 1fr; padding:36px 36px 44px; position:relative; z-index:1; }
+
+  /* LEFT */
+  .left { padding-right:32px; border-right:1px solid rgba(217,119,6,0.35); display:flex; flex-direction:column; justify-content:space-between; gap:24px; }
+  .brand h1 { font-size:66px; font-weight:900; color:var(--white); letter-spacing:-2px; line-height:1; margin-bottom:6px; }
+  .gold-line { width:140px; height:4px; background:linear-gradient(90deg,var(--gold),transparent); margin-bottom:8px; border-radius:2px; }
+  .brand .subtitle { font-size:18px; color:var(--lblue); margin-bottom:3px; }
+  .brand .tagline { font-size:13px; color:var(--ltblue); display:flex; align-items:center; gap:8px; margin-bottom:16px; }
+  .brand .tagline::before { content:''; width:3px; height:16px; background:var(--gold); border-radius:2px; flex-shrink:0; }
+  .brand .desc { font-size:12px; color:var(--grey); line-height:1.65; padding-top:10px; border-top:1px solid rgba(255,255,255,0.06); }
+  .badge { display:inline-block; background:var(--gold); color:var(--white); font-size:11px; font-weight:700; padding:7px 14px; border-radius:8px; margin-top:14px; }
+  .cta-btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--white); color:var(--navy); font-size:13px; font-weight:700; padding:12px 20px; border-radius:10px; border:none; cursor:pointer; transition:all 0.2s; font-family:inherit; width:100%; }
+  .cta-btn:hover { background:var(--ltblue); transform:translateY(-1px); }
+
+  /* RIGHT */
+  .right { padding-left:32px; }
+  .services-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .services-header h2 { font-size:12px; font-weight:700; color:var(--gold); letter-spacing:0.14em; text-transform:uppercase; white-space:nowrap; }
+  .services-header::after { content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(217,119,6,0.4),transparent); }
+  .cards { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+
+  /* CARD */
+  .card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:18px 10px 14px; cursor:pointer; transition:all 0.25s; position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; min-height:210px; }
+  .card::before { content:''; position:absolute; top:0;left:0;right:0; height:3px; border-radius:12px 12px 0 0; background:var(--accent,var(--gold)); transition:height 0.25s; }
+  .card:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.16); transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,0.3); }
+  .card:hover::before { height:5px; }
+  .card-icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+  .card-label { font-size:12px; font-weight:700; color:var(--white); line-height:1.3; }
+  .card-sub { font-size:10px; color:var(--grey); line-height:1.45; flex:1; }
+  .cs-badge { display:inline-block; background:rgba(217,119,6,0.15); color:var(--gold2); font-size:9px; font-weight:700; padding:3px 8px; border-radius:20px; border:1px solid rgba(217,119,6,0.3); text-transform:uppercase; letter-spacing:0.05em; margin-top:auto; }
+
+  /* OVERLAY */
+  .overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.65); z-index:100; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(4px); }
+  .overlay.open { display:flex; }
+  .panel { background:linear-gradient(135deg,var(--navy2),var(--navy3)); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:32px; max-width:540px; width:100%; position:relative; box-shadow:0 32px 80px rgba(0,0,0,0.6); animation:su 0.3s ease; }
+  @keyframes su { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  .p-close { position:absolute; top:14px;right:14px; background:rgba(255,255,255,0.07); border:none; color:var(--grey); width:30px; height:30px; border-radius:8px; cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center; font-family:inherit; transition:background 0.2s; }
+  .p-close:hover { background:rgba(255,255,255,0.14); color:white; }
+  .p-icon { width:50px; height:50px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:14px; }
+  .panel h3 { font-size:20px; font-weight:800; color:var(--white); margin-bottom:5px; }
+  .p-line { width:42px; height:3px; border-radius:2px; margin-bottom:14px; }
+  .panel p { font-size:13px; color:var(--grey); line-height:1.65; margin-bottom:12px; }
+  .panel ul { list-style:none; display:flex; flex-direction:column; gap:8px; margin-bottom:18px; }
+  .panel ul li { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--ltblue); line-height:1.5; }
+  .dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; margin-top:6px; display:inline-block; }
+  .p-btn { display:inline-flex; align-items:center; gap:8px; padding:11px 22px; border-radius:10px; font-size:13px; font-weight:700; cursor:pointer; border:none; font-family:inherit; transition:all 0.2s; text-decoration:none; color:white; }
+  .p-btn:hover { transform:translateY(-1px); opacity:0.9; }
+
+  /* COMING SOON */
+  .cs-body { text-align:center; padding:12px 0; }
+  .cs-body .cs-big { font-size:42px; margin-bottom:12px; }
+  .cs-body h3 { font-size:21px; font-weight:800; color:var(--white); margin-bottom:6px; }
+  .cs-body .cs-gl { width:42px; height:3px; background:var(--gold); border-radius:2px; margin:0 auto 14px; }
+  .cs-body p { font-size:13px; color:var(--grey); margin-bottom:20px; line-height:1.6; }
+  .pill-row { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+  .pill { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.11); color:var(--ltblue); font-size:12px; padding:9px 14px; border-radius:10px; text-decoration:none; transition:background 0.2s; }
+  .pill:hover { background:rgba(255,255,255,0.11); }
+
+  /* CONTACT */
+  .ct-body { text-align:center; }
+  .ct-body h3 { font-size:21px; font-weight:800; color:var(--white); margin-bottom:6px; }
+  .ct-body .ct-gl { width:42px; height:3px; background:var(--gold); border-radius:2px; margin:0 auto 14px; }
+  .ct-body > p { font-size:13px; color:var(--grey); margin-bottom:20px; line-height:1.6; }
+  .ct-list { display:flex; flex-direction:column; gap:10px; margin-bottom:20px; text-align:left; }
+  .ct-list a { display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--ltblue); font-size:13px; padding:12px 16px; border-radius:10px; text-decoration:none; transition:background 0.2s; }
+  .ct-list a:hover { background:rgba(255,255,255,0.1); }
+  .ct-ci { width:32px; height:32px; border-radius:8px; background:var(--gold); display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+  .ct-lbl { font-size:10px; color:#64748B; margin-bottom:2px; }
+  .ct-val { font-weight:600; font-size:13px; }
+  .ct-note { font-size:11px; color:#475569; }
+
+  /* EDIT HINT — visible only when file is opened locally for editing */
+  .edit-hint { display:none; background:rgba(217,119,6,0.1); border:1px dashed rgba(217,119,6,0.4); border-radius:8px; padding:10px 14px; margin-bottom:16px; font-size:11px; color:var(--gold2); line-height:1.6; text-align:left; }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <svg class="deco" viewBox="0 0 500 500"><circle cx="400" cy="250" r="200" stroke-width="1.5"/><circle cx="400" cy="250" r="160" stroke-width="1"/><circle cx="400" cy="250" r="120" stroke-width="1"/><circle cx="400" cy="250" r="80" stroke-width="1"/></svg>
+
+  <div class="inner">
+
+    <!-- LEFT -->
+    <div class="left">
+      <div class="brand">
+        <h1>TAITO</h1>
+        <div class="gold-line"></div>
+        <p class="subtitle">The Skills Lab</p>
+        <p class="tagline">Learn Differently.</p>
+        <p class="desc">Empowering learners, educators, and institutions across the world.</p>
+        <div class="badge">Education Division of Managix Global</div>
       </div>
-    </footer>
+      <button class="cta-btn" onclick="openContact()">✉&nbsp;&nbsp;Get in Touch</button>
+    </div>
 
-    <script>
-      const revealItems = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.14 });
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="services-header"><h2>Our Services</h2></div>
+      <div class="cards">
 
-      revealItems.forEach((item) => observer.observe(item));
-    </script>
-  </body>
+        <div class="card" style="--accent:#0D9488;" onclick="openPanel('cpd')">
+          <div class="card-icon" style="background:#0D9488;">📚</div>
+          <div class="card-label">Teacher CPD</div>
+          <div class="card-sub">Curriculum-aligned professional development for international school teachers</div>
+        </div>
+
+        <div class="card" style="--accent:#2563EB;" onclick="openCS('Corporate Training','💼','#2563EB')">
+          <div class="card-icon" style="background:#2563EB;">💼</div>
+          <div class="card-label">Corporate Training</div>
+          <div class="card-sub">IT and business professional development</div>
+          <div class="cs-badge">Coming Soon</div>
+        </div>
+
+        <div class="card" style="--accent:#7C3AED;" onclick="openCS('Education Consultancy','🏫','#7C3AED')">
+          <div class="card-icon" style="background:#7C3AED;">🏫</div>
+          <div class="card-label">Education Consultancy</div>
+          <div class="card-sub">Strategic support for schools and institutions</div>
+          <div class="cs-badge">Coming Soon</div>
+        </div>
+
+        <div class="card" style="--accent:#059669;" onclick="openPanel('uni')">
+          <div class="card-icon" style="background:#059669;">🎓</div>
+          <div class="card-label">University Admissions &amp; Career Counselling</div>
+          <div class="card-sub">British Council certified academic counsellor</div>
+        </div>
+
+        <div class="card" style="--accent:#D97706;" onclick="openCS('School Accreditation Support','✅','#D97706')">
+          <div class="card-icon" style="background:#D97706;">✅</div>
+          <div class="card-label">School Accreditation</div>
+          <div class="card-sub">International accreditation support</div>
+          <div class="cs-badge">Coming Soon</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeOverlay(event)">
+  <div class="panel" id="pc"></div>
+</div>
+
+<script>
+const PHONE = '+966 57 122 4121';
+const EMAIL = 'urooj@managix.in';
+
+const panels = {
+  cpd: {
+    icon:'📚', color:'#0D9488',
+    title:'Teacher CPD',
+    sub:'Professional Development for International School Teachers',
+    desc:'Practical, research-informed professional development sessions for teachers at international schools. Each session delivers one immediately applicable teaching strategy, aligned with internationally recognised curriculum standards.',
+    points:[
+      'CPD for teachers following British and American curricula',
+      'Science, Mathematics, and English — Grades K to 12',
+      'Live online interactive sessions',
+      'Informed by Finnish pedagogy — one of the most evidence-based approaches to teaching and learning in the world',
+      'STEAM-integrated teaching strategies',
+      'One strategy per session — ready to use in your next lesson',
+      'CPD Certificate of Participation on completion',
+    ],
+    cta:'Register Your Interest'
+  },
+  uni: {
+    icon:'🎓', color:'#059669',
+    title:'University Admissions & Career Counselling',
+    sub:'British Council Certified Academic Counsellor',
+    desc:'Expert, personalised guidance for students seeking admission to leading universities worldwide. Delivered by a British Council Certified Academic Counsellor with extensive experience supporting students from international schools in Saudi Arabia.',
+    points:[
+      'International university admissions support',
+      'Universities in New Zealand, USA, Australia, and the UK',
+      'Career counselling and academic pathway planning',
+      'Personal statement and application support',
+      'University shortlisting tailored to each student\'s profile',
+      'Delivered by a British Council Certified Academic Counsellor',
+    ],
+    cta:'Get in Touch'
+  }
+};
+
+function openPanel(key){
+  const p = panels[key];
+  document.getElementById('pc').innerHTML = `
+    <button class="p-close" onclick="close_()">✕</button>
+    <div class="p-icon" style="background:${p.color}">${p.icon}</div>
+    <h3>${p.title}</h3>
+    <div class="p-line" style="background:${p.color}"></div>
+    <p><strong style="color:#BFDBFE">${p.sub}</strong></p>
+    <p>${p.desc}</p>
+    <ul>${p.points.map(pt=>`<li><span class="dot" style="background:${p.color}"></span>${pt}</li>`).join('')}</ul>
+    <button class="p-btn" style="background:${p.color}" onclick="openContact()">${p.cta} →</button>
+  `;
+  document.getElementById('overlay').classList.add('open');
+}
+
+function openCS(name, icon, color){
+  document.getElementById('pc').innerHTML = `
+    <button class="p-close" onclick="close_()">✕</button>
+    <div class="cs-body">
+      <div class="cs-big">${icon}</div>
+      <h3>${name}</h3>
+      <div class="cs-gl"></div>
+      <p>We are currently developing this service. Register your interest and we will be in touch as soon as it becomes available.</p>
+      <div class="pill-row">
+        <a href="tel:${PHONE}" class="pill">📞&nbsp;${PHONE}</a>
+        <a href="mailto:${EMAIL}" class="pill">✉&nbsp;${EMAIL}</a>
+      </div>
+    </div>
+  `;
+  document.getElementById('overlay').classList.add('open');
+}
+
+function openContact(){
+  document.getElementById('pc').innerHTML = `
+    <button class="p-close" onclick="close_()">✕</button>
+    <div class="ct-body">
+      <div class="p-icon" style="background:#D97706;margin:0 auto 14px;">✉</div>
+      <h3>Get in Touch</h3>
+      <div class="ct-gl"></div>
+      <p>We would love to hear from you. Reach us through any of the following and we will get back to you shortly.</p>
+      <div class="ct-list">
+        <a href="tel:${PHONE}">
+          <div class="ct-ci">📞</div>
+          <div><div class="ct-lbl">Phone</div><div class="ct-val">${PHONE}</div></div>
+        </a>
+        <a href="mailto:${EMAIL}">
+          <div class="ct-ci">✉</div>
+          <div><div class="ct-lbl">Email</div><div class="ct-val">${EMAIL}</div></div>
+        </a>
+        <a href="https://managixglobal.com" target="_blank">
+          <div class="ct-ci">🌐</div>
+          <div><div class="ct-lbl">Website</div><div class="ct-val">managixglobal.com</div></div>
+        </a>
+      </div>
+      <p class="ct-note">Taito, The Skills Lab — Education Division of Managix Global</p>
+    </div>
+  `;
+  document.getElementById('overlay').classList.add('open');
+}
+
+function close_(){ document.getElementById('overlay').classList.remove('open'); }
+function closeOverlay(e){ if(e.target===document.getElementById('overlay')) close_(); }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') close_(); });
+</script>
+</body>
 </html>
