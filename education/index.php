@@ -96,6 +96,50 @@
 
   /* EDIT HINT — visible only when file is opened locally for editing */
   .edit-hint { display:none; background:rgba(217,119,6,0.1); border:1px dashed rgba(217,119,6,0.4); border-radius:8px; padding:10px 14px; margin-bottom:16px; font-size:11px; color:var(--gold2); line-height:1.6; text-align:left; }
+
+  @media (max-width: 1180px) {
+    body { align-items:flex-start; padding:18px; }
+    .inner { grid-template-columns:1fr; padding:32px; }
+    .left { padding-right:0; padding-bottom:28px; border-right:0; border-bottom:1px solid rgba(217,119,6,0.35); }
+    .right { padding-left:0; padding-top:28px; }
+    .cards { grid-template-columns:repeat(3,1fr); }
+    .card { min-height:190px; }
+    .cta-btn { width:auto; min-width:220px; }
+  }
+
+  @media (max-width: 760px) {
+    body { display:block; min-height:100vh; padding:0; background:linear-gradient(135deg,var(--navy3),var(--navy2)); }
+    .banner { min-height:100vh; border-radius:0; box-shadow:none; }
+    .inner { padding:30px 18px 36px; }
+    .brand h1 { font-size:clamp(48px,17vw,72px); letter-spacing:-1px; }
+    .brand .subtitle { font-size:17px; }
+    .brand .desc { font-size:13px; }
+    .badge { max-width:100%; line-height:1.35; }
+    .cta-btn { width:100%; }
+    .services-header { margin-bottom:14px; }
+    .cards { grid-template-columns:1fr; gap:12px; }
+    .card { min-height:auto; align-items:flex-start; text-align:left; padding:18px; }
+    .card-icon { width:44px; height:44px; }
+    .card-label { font-size:15px; }
+    .card-sub { font-size:12px; }
+    .cs-badge { margin-top:4px; }
+    .deco { right:-180px; width:420px; height:420px; opacity:0.05; }
+    .overlay { align-items:flex-start; padding:14px; overflow:auto; }
+    .panel { max-height:calc(100vh - 28px); overflow:auto; padding:26px 20px; border-radius:16px; }
+    .pill-row { flex-direction:column; }
+    .pill { justify-content:center; width:100%; }
+  }
+
+  @media (max-width: 420px) {
+    .inner { padding:26px 14px 32px; }
+    .left { gap:20px; }
+    .panel h3,
+    .ct-body h3,
+    .cs-body h3 { font-size:19px; }
+    .panel ul li { font-size:12px; }
+    .ct-list a { padding:11px 12px; }
+    .ct-val { overflow-wrap:anywhere; }
+  }
 </style>
 </head>
 <body>
