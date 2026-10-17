@@ -9,7 +9,6 @@ $pageDescription = 'Managix Digital Marketing helps businesses grow through full
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>" />
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
-<?php include __DIR__ . '/../partials/seo.php'; ?>
     <link rel="icon" type="image/png" href="../technology/assets/brand/fav.png?v=20260602" />
     <link rel="apple-touch-icon" href="../technology/assets/brand/fav.png?v=20260602" />
     <style>

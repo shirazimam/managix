@@ -1,7 +1,6 @@
 <?php
 $pageTitle = 'Employee Onboarding | Managix Technology';
 $pageDescription = 'Employee onboarding form for Managix Technology and Management Services LLP.';
-$pageRobots = 'noindex, nofollow';
 
 /*
  * Replace this with the Zoho public embed URL from Share > Embed > Iframe.
@@ -18,7 +17,6 @@ $isEmbedConfigured = strpos($zohoFormEmbedUrl, '/formperma/') !== false && strle
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>" />
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
-<?php include __DIR__ . '/partials/seo.php'; ?>
     <link rel="icon" type="image/png" href="technology/assets/brand/fav.png?v=20260601" />
     <link rel="apple-touch-icon" href="technology/assets/brand/fav.png?v=20260601" />
     <link rel="preconnect" href="https://forms.zohopublic.in" />

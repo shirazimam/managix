@@ -9,7 +9,6 @@ $pageDescription = 'Choose Managix Real Estate, Managix Technology, Managix Digi
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>" />
     <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
-<?php include __DIR__ . '/partials/seo.php'; ?>
     <link rel="icon" type="image/png" href="technology/assets/brand/fav.png?v=20260602" />
     <link rel="apple-touch-icon" href="technology/assets/brand/fav.png?v=20260602" />
     <style>
@@ -431,18 +430,18 @@ $pageDescription = 'Choose Managix Real Estate, Managix Technology, Managix Digi
       </section>
 
       <section class="choice-grid" aria-label="Managix divisions">
-        <a class="choice-card technology" href="technology">
-          <span>01</span>
-          <h2>Technology</h2>
-          <p>Enterprise software, GIS, cloud, dashboards, mobile and digital transformation.</p>
-          <strong>Visit Technology</strong>
-        </a>
-
         <a class="choice-card realestate" href="realestate">
-          <span>02</span>
+          <span>01</span>
           <h2>Real Estate</h2>
           <p>Property, advisory and real estate solutions from Managix.</p>
           <strong>Visit Real Estate</strong>
+        </a>
+
+        <a class="choice-card technology" href="technology">
+          <span>02</span>
+          <h2>Technology</h2>
+          <p>Enterprise software, GIS, cloud, dashboards, mobile and digital transformation.</p>
+          <strong>Visit Technology</strong>
         </a>
 
         <a class="choice-card marketing" href="digitalmarketing">
